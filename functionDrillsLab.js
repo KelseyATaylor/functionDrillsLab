@@ -15,6 +15,7 @@ function helloWorld() {
 	console.log("Hello, World!");
 }
 helloWorld();
+
 ////////////////// PROBLEM 2 ////////////////////
 
 /*
@@ -22,9 +23,11 @@ helloWorld();
 */
 
 //CODE HERE
-function jsNinja() {
+const jsNinja = () => {
 	return "I am a JavaScript ninja!";
-}
+};
+console.log(jsNinja());
+
 ////////////////// PROBLEM 3 ////////////////////
 /*
   Create a function called printName which takes in a person's name and console logs it.
@@ -33,10 +36,12 @@ function jsNinja() {
 */
 
 //CODE HERE
+
 function printName(name) {
 	console.log(name);
 }
 printName("Cameron");
+
 ////////////////// PROBLEM 4 ////////////////////
 /*
   Create a function called greeting that
@@ -71,16 +76,18 @@ const compareNums = (num1, num2) => {
 	} else if (num2 > num1) {
 		return num2;
 	} else {
-		return num1;
+		return num1 + " and " + num2 + " are the same!";
 	}
 };
 
 console.log(compareNums(1, 1));
 
 //ternary statment
-// function compareNums2(islarger) {
-//   return (isLarger ? '')
-// }
+const compareNums2 = (num1, num2) => {
+	num1 > num2 ? console.log(num1 + " is bigger") : console.log(num2 + " is bigger");
+};
+
+compareNums2(15, 13);
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -95,8 +102,13 @@ function add(param1, param2) {
 	return +param1 + +param2;
 }
 
+// function add1(param1, param2) {
+// 	return Number(param1) + Number(param2);
+// }
+
 let sum = add(1, "3");
 console.log(sum);
+
 ////////////////// PROBLEM 7 ////////////////////
 
 /*
@@ -123,6 +135,8 @@ const exclaimTwo = (str) => {
 	return str.toUpperCase() + "!!!";
 };
 
+console.log(exclaimTwo("llama"));
+
 console.log("arrow");
 // console.log('declaration')
 // console.log('expression')
@@ -133,6 +147,10 @@ console.log("arrow");
 
   Brownie points if you use a template string
 */
+
+const exclaimThree = (str) => str.toUpperCase();
+
+console.log(exclaimThree("hiii"));
 
 ////////////////// PROBLEM 9 ////////////////////
 
@@ -163,12 +181,14 @@ console.log("declaration");
 function nameCheck(name) {
 	if (name === "Steven") {
 		return "What is up Steven?";
+	} else if (name === "Bryan") {
+		return "Hey Bryan!";
 	} else {
 		return "Cool name " + name;
 	}
 }
 
-let nameGreeting = nameCheck("Lyla");
+let nameGreeting = nameCheck("Steven");
 console.log(nameGreeting);
 
 ////////////////// PROBLEM 11 ////////////////////
@@ -248,6 +268,12 @@ console.log(oddChecker);
 
 //CODE HERE
 
+const bestMovie = (movieTitle) => {
+	return movieTitle + "is the best movie ever!";
+};
+
+console.log(bestMovie("Sharknado"));
+
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107];
 /* 
@@ -261,6 +287,20 @@ let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107];
 
 //CODE HERE
 
+function bigOrSmall(arr) {
+	let answers = [];
+	for (i = 0; i < arr.length; i++) {
+		if (arr[i] > 100) {
+			answers.push("big");
+		} else {
+			answers.push("small");
+		}
+	}
+	return answers;
+}
+
+let arrayEvaluator = bigOrSmall(bigOrSmallArray);
+
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ["Katniss", "Peeta", "Fox-face", "Glimmer", "Cato", "Rue", "Thresh", "Clove", "Marvel"];
 let loser = "Glimmer";
@@ -271,6 +311,16 @@ let loser = "Glimmer";
 
 //CODE HERE
 
+function theEliminator(contestants, loser) {
+	for (let i = 0; i < contestants.length; i++) {
+		if (contestants[i] === loser) {
+			contestants.splice(i, 1);
+		}
+	}
+	return contestants;
+}
+
+console.log(theEliminator(contestants, loser));
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo.";
 /*
@@ -290,6 +340,17 @@ let sampleString = "Hi, my name is Kylo.";
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+
+function emailCheck(email) {
+	email = String(email).trim();
+	if (email.includes("@")) {
+		return "email verified";
+	} else {
+		return "must provide a valid email address";
+	}
+}
+
+console.log(emailCheck("email@test.com"));
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
@@ -313,6 +374,33 @@ let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9];
 */
 
 //CODE HERE
+
+function checkArrayAscending(arr) {
+	let comparisonValue = arr[0];
+	for (let i = 1; i < arr.length; i++) {
+		if (arr[i] < comparisonValue) {
+			return false;
+		} else {
+			comparisonValue = arr[i];
+		}
+	}
+	return true;
+}
+
+let arrayIsAscending = checkArrayAscending(sampleArray);
+console.log(arrayIsAscending);
+
+//Can also...
+// function arrNum(nums) {
+// 	for (let i = 0; i < nums.length; i++) {
+// 		if (nums[i + 1] < nums[i]) {
+// 			return false;
+// 		}
+// 	}
+// 	return true;
+// }
+// let arrayIsAscending = arrNum(sampleArray);
+// console.log(arrayIsAscending);
 
 ////////////////// PROBLEM 22 ////////////////////
 
