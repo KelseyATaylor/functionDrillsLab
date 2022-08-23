@@ -321,6 +321,7 @@ function theEliminator(contestants, loser) {
 }
 
 console.log(theEliminator(contestants, loser));
+
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo.";
 /*
@@ -329,6 +330,11 @@ let sampleString = "Hi, my name is Kylo.";
 */
 
 //CODE HERE
+
+function upperName(name) {
+	console.log(name.toUpperCase());
+}
+console.log(upperName(sampleString));
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -360,6 +366,13 @@ console.log(emailCheck("email@test.com"));
 
 //CODE HERE
 
+function buyFrog(gold) {
+	return gold / 3;
+}
+
+let totalFrogs = buyFrog(9);
+console.log(totalFrogs);
+
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
@@ -367,6 +380,12 @@ console.log(emailCheck("email@test.com"));
 
 //CODE HERE
 
+function buyFrog2(gold) {
+	return gold % 3 === 0;
+}
+
+let totalFrogs2 = buyFrog2(10);
+console.log(totalFrogs2);
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9];
 /*
